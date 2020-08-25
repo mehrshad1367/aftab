@@ -56,27 +56,27 @@
                         </div>
                     </div>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a href="#">پیام رسان</a></li>
+                        <li><a href="#">{{__('msg.Message Center')}}</a></li>
                     </ul>
                     <a class="dropdown-item" href="#">
                         <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                        تنظیمات
+                        {{__('msg.Setting')}}
                     </a>
                     <a class="dropdown-item" href="#">
                         <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                        تقویم روزانه
+                        {{__('msg.Daily Calender')}}
                     </a>
                     <div class="dropdown-divider"></div>
 
                     <a class="dropdown-item" href="{{route('logout')}}" >
                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                        خروج
+                        {{__('msg.Logout')}}
                     </a>
 
                 </div>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="index3.html" class="nav-link">خانه</a>
+                <a href="{{route('home')}}" class="nav-link">{{__('msg.Home')}}</a>
             </li>
             <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -89,7 +89,7 @@
                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                         {{__('msg.Management page')}}
                     </a>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="{{route('author.Portal')}}">
                         <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                         {{__('msg.Author page')}}
                     </a>

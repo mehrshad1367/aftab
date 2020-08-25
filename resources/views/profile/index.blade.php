@@ -18,29 +18,8 @@
                         </ul>
                     </div>
                 </div>
-                @if ($message = Session::get('success'))
-                    <div class="alert alert-success alert-block">
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                        <strong>{{ $message }}</strong>
-                    </div>
-                @endif
-                @if ($message = Session::get('attention'))
-                    <div class="alert alert-danger alert-block">
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                        <strong>{{ $message }}</strong>
-                    </div>
-                @endif
-                @if ($message = Session::get('Event'))
-                    <div class="alert alert-primary alert-block">
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                        <strong>{{ $message }}</strong>
-                    </div>
-                @endif
-                @if (session('passError'))
-                    <div class="alert alert-success">
-                        {{ session('passError') }}
-                    </div>
-                @endif
+                <!-- /.container-message -->
+
             </div><!-- /.container-fluid -->
         </section>
 

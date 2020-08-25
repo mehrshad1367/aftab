@@ -30,12 +30,15 @@ class UserRepository implements Interfaces\RepositoryInterface
 
     public function delete($id)
     {
-        // TODO: Implement delete() method.
+        $this->model->destroy('id',$id);
     }
 
     public function update(array $data, $id)
     {
-        // TODO: Implement update() method.
+        $user=$this->model->findOrFail($id);
+        $user->update($data);
+        return $user;
+
     }
 
     public function create(array $data)

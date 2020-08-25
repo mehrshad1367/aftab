@@ -16,23 +16,29 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('lang/{ln}','Lang\LangController@ln')->name('lang');
+Route::get('lang/{ln}', 'Lang\LangController@ln')->name('lang');
 
-Route::group(['middleware'=>['langCheck']], function (){
-Auth::routes();
+Route::group(['middleware' => ['langCheck']], function () {
+    Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 //-----------------------Profile-------------------------------
-    Route::group(['namespace'=>'Profile'],function()
-    {
+    Route::group(['namespace' => 'Profile'], function () {
         Route::get('profile/{id}', 'ProfileController@show')->name('profile.show');
-});
+        Route::post('profile/avatar/{id}', 'ProfileController@avatar')->name('profile.avatar');
+        Route::get('profile/edit/{id}', 'ProfileController@edit')->name('profile.edit');
+        Route::post('profile/update/{id}', 'ProfileController@update')->name('profile.update');
+    });
 //-----------------------Access--------------------------------
-Route::group(['middleware'=>['access'],'namespace' => 'Admin'], function(){
-    Route::get('adminPortal','AdminController@index')->name('admin.Portal');
-});
+    Route::group(['middleware' => ['access'], 'namespace' => 'Admin'], function () {
+        Route::get('adminPortal', 'AdminController@index')->name('admin.Portal');
+    });
+    Route::group(['middleware' => ['access'], 'namespace' => 'Author'], function () {
+        Route::get('authorPortal', 'AuthorController@index')->name('author.Portal');
+    });
+
 
 
 
