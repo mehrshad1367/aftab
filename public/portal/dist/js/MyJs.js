@@ -4,6 +4,41 @@ $.ajaxSetup({
   }
 });
 
+//--------------------------Submit new post---------------------
+function insert_record() {
+  var FirstName = $('#user-register-form #firstName').val();
+  var LastName = $('#user-register-form #lastName').val();
+  var Department = $('#user-register-form #department').val();
+  var Phone = $('#user-register-form #phone').val();
+
+  if (FirstName == '' || LastName == '' || Department == '' || Phone == '') {
+    $('#blank_message').html('Please Fill in the Blanks');
+  } else {
+    $.ajax({
+      location: 'employees/update',
+      url: 'employees/store',
+      method: 'POST',
+      dataType: 'json',
+      data: {firstname: FirstName, lastname: LastName, department: Department, phone: Phone},
+      success: function (response) {
+        var tr = "<tr>";
+        tr += "<td>" + response.data.id + "</td>";
+        tr += "<td>" + FirstName + "</td>";
+        tr += "<td>" + LastName + "</td>";
+        tr += "<td>" + Department + "</td>";
+        tr += "<td>" + Phone + "</td>";
+        tr += "<td>" + "<button type='button' style='cursor: pointer ; color: white' data-toggle='modal' data-target='#UpdateModal' id='btn_update' class = 'btn btn-primary' onclick='update(this," + response.data.id + ")'>Edit</button>" + "</td>";
+        tr += "<td>" + "<button type='button' style='cursor: pointer ; color: white' data-toggle='modal' data-target='#DeleteModal' id='btn_delete' class = 'btn btn-danger' onclick='deleteData(this," + response.data.id + ")'>Delete</button>" + "</td>";
+        tr += "</tr>";
+        $("#dataTable tbody").append(tr)
+        // location.reload();
+        $('#user-register-form').trigger("reset");
+        $('#Registration').modal('hide');
+      }
+    })
+  }
+}
+
 //--------------------------active btn--------------------------
 $('#inputProfileImg').on('change',function(){
   //get the file name

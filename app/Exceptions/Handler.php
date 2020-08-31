@@ -50,6 +50,9 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        if ($exception instanceof CostumException){
+            return redirect('exception/view');
+        }
         return parent::render($request, $exception);
     }
 }

@@ -1,6 +1,10 @@
 @extends('master')
 @section('content')
 
+    <section class="content">
+        <img src="{{asset('portal/dist/img/credit/underconstruction.png')}}" class="img-lg" style="width: 55%;height: auto ;margin-right: 270px; " alt="Cinque Terre">
+
+    </section>
 
 
     <!-- Content Wrapper. Contains page content -->
