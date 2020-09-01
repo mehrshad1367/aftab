@@ -179,7 +179,6 @@ class Zagma
 
         $recived = json_decode($res, true);
 
-
         if(!empty($recived['vaz']) && $recived['vaz'] == 'true'){
             return $recived;
         }

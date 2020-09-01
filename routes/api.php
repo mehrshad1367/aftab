@@ -18,4 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('zagma', 'PostController@index');
+Route::get('/zagma/getprice','Api\ZagmaController@getPrice');
+Route::get('/zagma/orderstatus','Api\ZagmaController@orderStatus');
+Route::get('/zagma/requestpricepostnew','Api\ZagmaController@requestPricePostNew');
+Route::get('/zagma/orderwitharray','Api\ZagmaController@orderWithArray');
