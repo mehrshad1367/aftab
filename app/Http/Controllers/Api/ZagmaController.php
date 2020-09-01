@@ -10,23 +10,26 @@ class ZagmaController extends Controller
 {
     public function getPrice(Zagma $zagma)
     {
-        $zagma->getPrice();
+        $zagma=$zagma->getPrice();
+        return response()->json($zagma);
     }
 
-    public function orderstatus(Zagma $zagma)
+    public function orderStatus(Zagma $zagma)
     {
-        $zagma->orderstatus();
+        $zagma=$zagma->orderstatus();
+        return response()->json($zagma);
     }
 
-    public function requestpricepostnew(Zagma $zagma)
+    public function requestPricePostNew(Zagma $zagma)
     {
-        $zagma->requestpricepostnew();
+        $zagma=$zagma->requestpricepostnew();
+        return response()->json($zagma);
     }
 
     public function orderWithArray(Zagma $zagma)
     {
-
-        $zagma->orderwitharray();
+        $zagma=$zagma->orderwitharray();
+        return response()->json($zagma);
     }
 
 }
