@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Models\User;
+use App\Post;
 use Illuminate\Support\Facades\Route;
+use \Illuminate\Support\Facades\Redis;
+use \Illuminate\Support\Facades\Cache;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,3 +79,28 @@ Route::get('zagma/getPrice', 'PostController@getPrice');
 Route::get('zagma/orderstatus', 'PostController@orderstatus');
 Route::get('zagma/requestpricepostnew', 'PostController@requestpricepostnew');
 Route::get('zagma/orderwitharray', 'PostController@orderwitharray');
+
+
+Route::get('redis', function (){
+
+    if (Redis::get('posts.all')){
+        $posts=Redis::get('posts.all');
+
+        return $posts;
+    }
+    $posts = User::all();
+    Redis::setex('posts.all',60 * 60 * 24 , $posts);
+
+    return $posts;
+});
+
+
+Route::get('/cache', function (){
+
+    return Cache::remember('posts.all',60*60*24, function (){
+        return Post::all();
+    });
+});
+
+
+Route::get('redis/{id}','RedisController@index');
