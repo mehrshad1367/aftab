@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "fb6f5d64-213a-421d-a1d0-03891f59cae2",
+		"name": "ZagmaApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/aftab/public/index.php/api/zagma/getprice",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"2 updated Post to new one\",\r\n    \"content\":\"new new content\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/aftab/public/index.php/api/zagma/orderstatus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"aftab",
+						"public",
+						"index.php",
+						"api",
+						"zagma",
+						"orderstatus"
+					]
+				},
+				"description": "GetPrice"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/aftab/public/index.php/api/zagma/orderstatus",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"2 updated Post to new one\",\r\n    \"content\":\"new new content\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/aftab/public/index.php/api/zagma/requestpricepostnew",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"aftab",
+						"public",
+						"index.php",
+						"api",
+						"zagma",
+						"requestpricepostnew"
+					]
+				},
+				"description": "OrderStatus"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/aftab/public/index.php/api/zagma/requestpricepostnew",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"2 updated Post to new one\",\r\n    \"content\":\"new new content\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/aftab/public/index.php/api/zagma/requestpricepostnew",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"aftab",
+						"public",
+						"index.php",
+						"api",
+						"zagma",
+						"requestpricepostnew"
+					]
+				},
+				"description": "RequestPricePostNew"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/aftab/public/index.php/api/zagma/orderwitharray",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"2 updated Post to new one\",\r\n    \"content\":\"new new content\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/aftab/public/index.php/api/zagma/orderwitharray",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"aftab",
+						"public",
+						"index.php",
+						"api",
+						"zagma",
+						"orderwitharray"
+					]
+				},
+				"description": "OrderWithArray"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
